@@ -51,7 +51,7 @@ namespace PoC1.Controllers
                     {
                         var content = await response.Content
                             .ReadAsStringAsync();
-                        
+
                         var deserializeObject = JsonConvert.DeserializeObject<Rootobject>(content);
                         return deserializeObject;
                     }
@@ -120,7 +120,7 @@ namespace PoC1.Controllers
         public int supplierNumber { get; set; }
         public string invoiceNumber { get; set; }
         public string date { get; set; }
-        public object latestDueDate { get; set; }
+        public string latestDueDate { get; set; }
         public string vatDate { get; set; }
         public string bookingDate { get; set; }
         public string text { get; set; }
@@ -130,7 +130,7 @@ namespace PoC1.Controllers
         public float remainder { get; set; }
         public bool isBooked { get; set; }
         public object attachmentPictureNumber { get; set; }
-        public long lastUpdatedInTicks { get; set; }
+        public long? lastUpdatedInTicks { get; set; }
         public Line[] lines { get; set; }
         public string self { get; set; }
     }
@@ -140,13 +140,13 @@ namespace PoC1.Controllers
         public int setupId { get; set; }
         public int voucherId { get; set; }
         public int voucherLineNumber { get; set; }
-        public object dueDate { get; set; }
+        public string dueDate { get; set; }
         public string text { get; set; }
         public float amount { get; set; }
         public float amountInBaseCurrency { get; set; }
-        public int accountNumber { get; set; }
+        public int? accountNumber { get; set; }
         public bool isVatLine { get; set; }
-        public object vatCode { get; set; }
+        public string vatCode { get; set; }
         public string self { get; set; }
     }
 
