@@ -35,6 +35,13 @@ namespace PoC1
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(builder =>
+            {
+                builder.WithOrigins("*")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            });
+
             app.UseRouting();
 
             app.UseAuthorization();
